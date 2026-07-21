@@ -39,7 +39,7 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="py-24 px-4 sm:px-6 border-b-2 border-ink">
       <div className="max-w-3xl mx-auto">
-        <SectionHeader eyebrow="02 — Projects" title="Things I've shipped" />
+        <SectionHeader title="Things I've shipped" />
 
         <div className="flex flex-col gap-6">
           {projects.map((p, i) => {

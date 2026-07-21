@@ -6,7 +6,7 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-24 px-4 sm:px-6 border-b-2 border-ink">
       <div className="max-w-3xl mx-auto">
-        <SectionHeader eyebrow="01 — About" title="How I build" />
+        <SectionHeader title="How I build" />
         <motion.div
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           transition={{ duration: 0.5 }}

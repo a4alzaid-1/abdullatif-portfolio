@@ -7,7 +7,7 @@ export default function ContactSection() {
   return (
     <section id="contact" className="py-24 px-4 sm:px-6">
       <div className="max-w-3xl mx-auto">
-        <SectionHeader eyebrow="04 — Contact" title="Let's talk" />
+        <SectionHeader title="Let's talk" />
         <motion.div
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           transition={{ duration: 0.5 }}

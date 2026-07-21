@@ -13,7 +13,7 @@ export default function SkillsSection() {
   return (
     <section id="skills" className="py-24 px-4 sm:px-6 border-b-2 border-ink">
       <div className="max-w-3xl mx-auto">
-        <SectionHeader eyebrow="03 — Skills" title="What I bring" />
+        <SectionHeader title="What I bring" />
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10">
           {groups.map((g, i) => (
             <motion.div

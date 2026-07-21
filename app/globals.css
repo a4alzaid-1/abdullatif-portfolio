@@ -31,6 +31,10 @@
   --color-border-strong: var(--color-border-strong);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--color-paper);
   color: var(--color-ink);
@@ -41,7 +45,33 @@ body {
   font-family: var(--font-archivo-black), Impact, "Arial Black", sans-serif;
 }
 
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
 ::selection {
   background: var(--color-ink);
   color: var(--color-paper);
+}
+
+/* The One Red Rule doesn't apply to focus rings — they're a system signal, not decoration. */
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

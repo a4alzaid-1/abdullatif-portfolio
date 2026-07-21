@@ -9,7 +9,7 @@ export default function AboutSection() {
         <SectionHeader title="How I build" />
         <motion.div
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="space-y-6"
         >
           <p className="text-[20px] leading-[1.65] text-ink pl-5 border-l-[4px] border-red italic">

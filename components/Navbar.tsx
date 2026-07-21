@@ -21,7 +21,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 inset-x-0 z-50 bg-paper transition-shadow duration-200 ${
+      className={`fixed top-0 inset-x-0 z-50 bg-paper transition-colors duration-200 ${
         scrolled ? "border-b-2 border-ink" : "border-b-2 border-transparent"
       }`}
     >
@@ -48,8 +48,13 @@ export default function Navbar() {
           </a>
         </div>
 
-        <button onClick={() => setOpen(!open)} className="md:hidden text-ink" aria-label="Menu">
-          {open ? <X size={26} /> : <Menu size={26} />}
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden text-ink -mr-2.5 p-2.5 flex items-center justify-center"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+        >
+          {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 

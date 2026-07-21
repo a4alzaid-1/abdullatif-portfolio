@@ -5,7 +5,7 @@ export default function SectionHeader({ title }: { title: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       className="mb-10"
     >
       <h2 className="font-display text-[38px] leading-[1.1] tracking-[-0.02em] text-ink">{title}</h2>

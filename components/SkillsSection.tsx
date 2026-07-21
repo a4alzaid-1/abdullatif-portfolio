@@ -19,7 +19,7 @@ export default function SkillsSection() {
             <motion.div
               key={g.label}
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-              transition={{ delay: i * 0.08, duration: 0.5 }}
+              transition={{ delay: i * 0.08, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             >
               <p className="font-sans text-[11px] font-bold uppercase tracking-[0.12em] text-ink border-b-2 border-ink pb-2 mb-1">
                 {g.label}

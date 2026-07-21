@@ -46,7 +46,7 @@ export default function ProjectsSection() {
             const Card = (
               <motion.div
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                transition={{ delay: i * 0.08, duration: 0.5 }}
+                transition={{ delay: i * 0.08, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 className={`group relative p-6 sm:p-7 bg-paper border-2 ${
                   p.featured ? "border-t-[4px] border-t-red border-x-border-subtle border-b-border-subtle" : "border-border-subtle"
                 } hover:border-ink transition-colors duration-200`}

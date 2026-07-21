@@ -1,26 +1,38 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-void: #08090C;
+  --color-panel: #0F1116;
+  --color-line: #1C2029;
+  --color-ink: #E8EAF0;
+  --color-dim: #7C8496;
+  --color-cyan: #4FE8D8;
+  --color-violet: #8B7CF6;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-manrope);
+  --font-mono: var(--font-jetbrains);
+  --color-void: var(--color-void);
+  --color-panel: var(--color-panel);
+  --color-line: var(--color-line);
+  --color-ink: var(--color-ink);
+  --color-dim: var(--color-dim);
+  --color-cyan: var(--color-cyan);
+  --color-violet: var(--color-violet);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-void);
+  color: var(--color-ink);
+  font-family: var(--font-manrope), Arial, sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-jetbrains), monospace;
+}
+
+::selection {
+  background: var(--color-cyan);
+  color: var(--color-void);
 }

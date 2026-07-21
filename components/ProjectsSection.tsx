@@ -10,6 +10,7 @@ const projects = [
     desc: "Full marketing site with a custom heritage-print identity: framed gallery, bill-of-fare menu layout, and a floating WhatsApp ordering button wired to the client's real number.",
     tags: ["Next.js", "Framer Motion", "Vercel"],
     href: "https://eish-w-dgous.vercel.app",
+    featured: true,
   },
   {
     name: "Flower Story Bakery",
@@ -36,33 +37,35 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-24 px-4 sm:px-6">
+    <section id="projects" className="py-24 px-4 sm:px-6 border-b-2 border-ink">
       <div className="max-w-3xl mx-auto">
         <SectionHeader eyebrow="02 — Projects" title="Things I've shipped" />
 
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-6">
           {projects.map((p, i) => {
             const Card = (
               <motion.div
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                 transition={{ delay: i * 0.08, duration: 0.5 }}
-                className="group relative p-6 sm:p-7 rounded-2xl bg-panel border border-line hover:border-cyan/40 transition-colors duration-300"
+                className={`group relative p-6 sm:p-7 bg-paper border-2 ${
+                  p.featured ? "border-t-[4px] border-t-red border-x-border-subtle border-b-border-subtle" : "border-border-subtle"
+                } hover:border-ink transition-colors duration-200`}
               >
                 <div className="flex items-start justify-between gap-4 mb-3">
                   <div>
-                    <h3 className="text-ink font-bold text-lg flex items-center gap-2">
+                    <h3 className="font-display text-xl text-ink flex items-center gap-2">
                       {p.name}
-                      {p.href && (
-                        <ArrowUpRight size={16} className="text-dim group-hover:text-cyan transition-colors" />
-                      )}
+                      {p.href && <ArrowUpRight size={18} className="text-text-tertiary group-hover:text-red transition-colors" />}
                     </h3>
-                    <p className="text-cyan text-xs font-mono mt-0.5">{p.tagline}</p>
+                    <p className="font-sans text-[12px] font-bold uppercase tracking-[0.06em] text-text-secondary mt-1">
+                      {p.tagline}
+                    </p>
                   </div>
                 </div>
-                <p className="text-dim text-sm leading-relaxed mb-4">{p.desc}</p>
+                <p className="text-text-secondary text-[15px] leading-[1.6] mb-4">{p.desc}</p>
                 <div className="flex flex-wrap gap-2">
                   {p.tags.map((t) => (
-                    <span key={t} className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-void border border-line text-dim">
+                    <span key={t} className="font-mono text-[12px] px-2.5 py-1 border-2 border-border-medium text-text-secondary">
                       {t}
                     </span>
                   ))}

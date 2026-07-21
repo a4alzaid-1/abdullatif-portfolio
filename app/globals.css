@@ -1,38 +1,47 @@
 @import "tailwindcss";
 
 :root {
-  --color-void: #08090C;
-  --color-panel: #0F1116;
-  --color-line: #1C2029;
-  --color-ink: #E8EAF0;
-  --color-dim: #7C8496;
-  --color-cyan: #4FE8D8;
-  --color-violet: #8B7CF6;
+  --color-ink: #0A0A0A;
+  --color-red: #EF4444;
+  --color-red-hover: #DC2626;
+  --color-paper: #FAFAFA;
+  --color-surface: #F5F5F5;
+  --color-surface-raised: #E5E5E5;
+  --color-text-secondary: #525252;
+  --color-text-tertiary: #A3A3A3;
+  --color-border-subtle: #E5E5E5;
+  --color-border-medium: #D4D4D4;
+  --color-border-strong: #0A0A0A;
 }
 
 @theme inline {
-  --font-sans: var(--font-manrope);
-  --font-mono: var(--font-jetbrains);
-  --color-void: var(--color-void);
-  --color-panel: var(--color-panel);
-  --color-line: var(--color-line);
+  --font-display: var(--font-archivo-black);
+  --font-sans: var(--font-work-sans);
+  --font-mono: var(--font-space-mono);
   --color-ink: var(--color-ink);
-  --color-dim: var(--color-dim);
-  --color-cyan: var(--color-cyan);
-  --color-violet: var(--color-violet);
+  --color-red: var(--color-red);
+  --color-red-hover: var(--color-red-hover);
+  --color-paper: var(--color-paper);
+  --color-surface: var(--color-surface);
+  --color-surface-raised: var(--color-surface-raised);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-tertiary: var(--color-text-tertiary);
+  --color-border-subtle: var(--color-border-subtle);
+  --color-border-medium: var(--color-border-medium);
+  --color-border-strong: var(--color-border-strong);
 }
 
 body {
-  background: var(--color-void);
+  background: var(--color-paper);
   color: var(--color-ink);
-  font-family: var(--font-manrope), Arial, sans-serif;
+  font-family: var(--font-work-sans), Arial, sans-serif;
 }
 
-.font-mono {
-  font-family: var(--font-jetbrains), monospace;
+.font-display {
+  font-family: var(--font-archivo-black), Impact, "Arial Black", sans-serif;
 }
 
 ::selection {
-  background: var(--color-cyan);
-  color: var(--color-void);
+  background: var(--color-ink);
+  color: var(--color-paper);
 }

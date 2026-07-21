@@ -21,42 +21,49 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-void/90 backdrop-blur-md border-b border-line" : "bg-transparent"
+      className={`fixed top-0 inset-x-0 z-50 bg-paper transition-shadow duration-200 ${
+        scrolled ? "border-b-2 border-ink" : "border-b-2 border-transparent"
       }`}
     >
       <div className="max-w-5xl mx-auto px-5 sm:px-6 flex items-center justify-between h-16">
-        <a href="#hero" className="font-mono text-sm text-ink tracking-tight">
-          <span className="text-cyan">~/</span>abdullatif
+        <a href="#hero" className="font-display text-sm text-ink tracking-tight">
+          ABDULLATIF
         </a>
 
         <div className="hidden md:flex items-center gap-8">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="text-sm text-dim hover:text-ink transition-colors">
+            <a
+              key={l.href}
+              href={l.href}
+              className="text-[13px] font-bold uppercase tracking-[0.06em] text-ink border-b-[3px] border-transparent hover:border-red pb-1 transition-colors"
+            >
               {l.label}
             </a>
           ))}
           <a
             href="/Abdullatif_Alzaid_CV.docx"
-            className="text-sm px-4 py-2 rounded-full border border-line text-ink hover:border-cyan hover:text-cyan transition-colors"
+            className="text-[13px] font-bold uppercase tracking-[0.06em] px-6 py-2.5 bg-ink text-paper hover:bg-red transition-colors"
           >
             Resume
           </a>
         </div>
 
         <button onClick={() => setOpen(!open)} className="md:hidden text-ink" aria-label="Menu">
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {open ? <X size={26} /> : <Menu size={26} />}
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden bg-panel border-t border-line px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-paper border-t-2 border-ink px-6 py-5 flex flex-col gap-5">
           {links.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-ink text-sm">
+            <a key={l.href} href={l.href} onClick={() => setOpen(false)}
+              className="text-ink text-sm font-bold uppercase tracking-[0.06em]">
               {l.label}
             </a>
           ))}
-          <a href="/Abdullatif_Alzaid_CV.docx" className="text-cyan text-sm">Resume</a>
+          <a href="/Abdullatif_Alzaid_CV.docx" className="text-red text-sm font-bold uppercase tracking-[0.06em]">
+            Resume
+          </a>
         </div>
       )}
     </nav>
